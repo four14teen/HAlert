@@ -13,7 +13,7 @@ namespace HAlerts
         /// </summary>
         public const string GetHelpTour = "help/tour";
         /// <summary>
-        /// Navigates to a random friend finding room.
+        /// Navigates to a random friend finding room.you
         /// </summary>
         public const string FindFriends = "friendbar/findfriends";
 
@@ -48,6 +48,17 @@ namespace HAlerts
         public const string GoToHomeRoom = "navigator/goto/home";
 
         /// <summary>
+        /// Opens the "buy credits" page on the Habbo website. Keeps the client open in the background.
+        /// </summary>
+        /// <returns></returns>
+        public static string ShowCreditsPage = "habblet/open/credits";
+        /// <summary>
+        /// Opens the small camera to take a photo for your room thumbnail. Only works when in a room.
+        /// </summary>
+        /// <returns></returns>
+        public static string ShowThumbnailCamera = "roomThumbnailCamera/open";
+
+        /// <summary>
         /// Opens the group details for the chosen group ID.
         /// </summary>
         /// <param name="id">The group ID</param>
@@ -75,23 +86,18 @@ namespace HAlerts
         public static string SearchForRooms(string query) => $"navigator/search/{query}";
 
         /// <summary>
-        /// Opens the "buy credits" page on the Habbo website. Keeps the client open in the background.
-        /// </summary>
-        /// <returns></returns>
-        public static string ShowCreditsPage() => "habblet/open/credits";
-        /// <summary>
-        /// Opens the small camera to take a photo for your room thumbnail. Only works when in a room.
-        /// </summary>
-        /// <returns></returns>
-        public static string ShowThumbnailCamera() => "roomThumbnailCamera/open";
-
-        /// <summary>
         /// Opens the chosen page on the Habbo website. Keeps the client open in the background.
         /// </summary>
         /// <param name="name">The page name</param>
         /// <returns></returns>
         public static string ShowHabboWebPage(string name) => $"habblet/open/{name}";
-
+        
+        /// <summary>
+        /// Opens a user's profile based on the chosen player name.
+        /// </summary>
+        /// <param name="name">The player name</param>
+        /// <returns></returns>
+        public static string ShowPlayerProfile(string name) => $"friendbar/user/{name}";
         /// <summary>
         /// Opens the catalog home page.
         /// </summary>
@@ -110,11 +116,12 @@ namespace HAlerts
             => type == HCatalogType.BuildersClub ? $"catalog/warehouse/{name}" : $"catalog/open/{name}";
 
         /// <summary>
-        /// Opens a user's profile based on the chosen player name.
+        /// Opens the seasonal calendar. Possibly only works on the hotel view.
         /// </summary>
-        /// <param name="name">The player name</param>
+        /// <param name="useAlternative">Because there are 2 different paths to open the calendar, this parameter lets you use the second option (openView). Default is QuestEngine.</param>
         /// <returns></returns>
-        public static string ShowPlayerProfile(string name) => $"friendbar/user/{name}";
+        public static string ShowCalendar(bool useAlternative = false)
+            => useAlternative ? "openView/calendar" : "questengine/calendar";
 
         /// <summary>
         /// Opens a list of forums based on the chosen tab.
@@ -152,14 +159,6 @@ namespace HAlerts
             return $"questengine/achievements/{tabStr}";
         }
 
-        /// <summary>
-        /// Opens the seasonal calendar. Possibly only works on the hotel view.
-        /// </summary>
-        /// <param name="useAlternative">Because there are 2 different paths to open the calendar, this parameter lets you use the second option (openView). Default is QuestEngine.</param>
-        /// <returns></returns>
-        public static string ShowCalendar(bool useAlternative = false)
-            => useAlternative ? "openView/calendar" : "questengine/calendar";
-        
         /// <summary>
         /// Highlights the chosen menu icon on the toolbar by pointing a big green animated arrow at them.
         /// </summary>
