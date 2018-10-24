@@ -1,6 +1,5 @@
 ﻿namespace HAlerts
 {
-
     public enum HHightlightableMenu
     {
         Me,

@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace HAlerts
+﻿namespace HAlerts
 {
-    public class HAlertBuilder
+    public sealed class HAlertBuilder
     {
         private string _title;
         private string _message;
@@ -12,11 +10,13 @@ namespace HAlerts
         private string _urlTitle;
 
         public static HAlertBuilder CreateAlert(HAlertType type, string message)
-            => new HAlertBuilder()
+        {
+            return new HAlertBuilder()
             {
                 _message = message,
                 _alertType = (type == HAlertType.Bubble ? "BUBBLE" : "POP_UP")
             };
+        }
 
         /// <summary>
         /// Adds a title to the alert.
@@ -30,7 +30,7 @@ namespace HAlerts
         }
 
         /// <summary>
-        /// <para>Adds an event to the alert. This can be a Habbo Event (see <see cref="HAlerts.HabboEvents"/> for a list of pre-defined events you can use) or an external URL to navigate to.</para>
+        /// <para>Adds an event to the alert. This can be a Habbo Event (see <see cref="HabboEvents"/> for a list of pre-defined events you can use) or an external URL to navigate to.</para>
         /// <para>This event triggers when clicking the button in <see cref="HAlertType.PopUp"/> alerts, or when clicking a <see cref="HAlertType.Bubble"/> alert.</para>
         /// </summary>
         /// <param name="url">The HabboEvent or external URL</param>
