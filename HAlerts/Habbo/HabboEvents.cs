@@ -13,7 +13,7 @@ namespace HAlerts
         /// </summary>
         public const string GetHelpTour = "help/tour";
         /// <summary>
-        /// Navigates to a random friend finding room.you
+        /// Navigates to a random friend finding room.
         /// </summary>
         public const string FindFriends = "friendbar/findfriends";
 
