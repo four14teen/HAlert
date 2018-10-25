@@ -107,6 +107,14 @@ namespace HAlerts
             => type == HCatalogType.BuildersClub ? "catalog/warehouse" : "catalog/open";
 
         /// <summary>
+        /// Opens a chat window with a chosen player ID.
+        /// </summary>
+        /// <param name="id">The player ID</param>
+        /// <returns></returns>
+        public static string ShowPlayerChat(int id)
+            => $"friendlist/openchat/{id}:0";
+
+        /// <summary>
         /// Opens the catalog on the chosen page.
         /// </summary>
         /// <param name="type">Enum to specify wether the regular or builders club catalog has to be opened</param>
