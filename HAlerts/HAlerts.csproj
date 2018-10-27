@@ -50,6 +50,7 @@
     <Compile Include="Enum\HForumsTab.cs" />
     <Compile Include="Enum\HHighlightableMenu.cs" />
     <Compile Include="Enum\HInventoryTab.cs" />
+    <Compile Include="Enum\HUIControl.cs" />
     <Compile Include="Habbo\HabboEvents.cs" />
     <Compile Include="HAlert.cs" />
     <Compile Include="HAlertBuilder.cs" />

@@ -184,5 +184,11 @@ namespace HAlerts
 
             return $"toolbar/highlight/{menuString}";
         }
+
+        public static string ShowHelpBubble(HUIControl uiControl, string message)
+            => $"helpBubble/add/{Enum.GetName(typeof(HUIControl), uiControl)}/{message}";
+
+        public static string RemoveHelpBubble(HUIControl uiControl)
+            => $"helpBubble/remove/{Enum.GetName(typeof(HUIControl), uiControl)}";
     }
 }
