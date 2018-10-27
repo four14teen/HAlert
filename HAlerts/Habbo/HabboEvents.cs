@@ -185,9 +185,21 @@ namespace HAlerts
             return $"toolbar/highlight/{menuString}";
         }
 
+        /// <summary>
+        /// Adds a help "chatbubble" type of bubble to the selected part of the Habbo UI.
+        ///<para>NOTE: If more than one bubble is present at once, only the last bubble will be closable. Others will never leave the UI.</para>
+        /// </summary>
+        /// <param name="uiControl">Enum to specify which control in the UI needs to have a help bubble added</param>
+        /// <param name="message">The message that will be displayed on the help bubble</param>
+        /// <returns></returns>
         public static string ShowHelpBubble(HUIControl uiControl, string message)
             => $"helpBubble/add/{Enum.GetName(typeof(HUIControl), uiControl)}/{message}";
 
+        /// <summary>
+        /// Removes a help "chatbubble" type of bubble from the selected part of the Habbo UI.
+        /// </summary>
+        /// <param name="uiControl">Enum to specify which control in the UI needs to have a help bubble added</param>
+        /// <returns></returns>
         public static string RemoveHelpBubble(HUIControl uiControl)
             => $"helpBubble/remove/{Enum.GetName(typeof(HUIControl), uiControl)}";
     }
