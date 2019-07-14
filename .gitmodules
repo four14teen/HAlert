@@ -1,0 +1,3 @@
+[submodule "Submodules/Sulakore"]
+	path = Submodules/Sulakore
+	url = https://github.com/arachish/sulakore.git
