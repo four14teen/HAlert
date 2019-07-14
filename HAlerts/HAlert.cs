@@ -1,4 +1,4 @@
-﻿using Sulakore.Protocol;
+﻿using Sulakore.Network.Protocol;
 using System.Collections.Generic;
 
 namespace HAlerts
@@ -45,9 +45,10 @@ namespace HAlerts
         /// </summary>
         /// <param name="header">The clientside alert header.</param>
         /// <returns></returns>
-        public HMessage ToPacket(ushort header)
+        public HPacket ToPacket(ushort header)
         {
-            HMessage packet = new HMessage(header, "HAlerts_custom");
+            EvaWirePacket packet = new EvaWirePacket(header, "HAlerts_custom");
+
             Dictionary<string, string> alertParams = new Dictionary<string, string>(6);
 
             if (Title != null) alertParams.Add("title", Title);
@@ -57,12 +58,12 @@ namespace HAlerts
             if (Image != null) alertParams.Add("image", Image);
             if (UrlTitle != null) alertParams.Add("linkTitle", UrlTitle);
 
-            packet.WriteInteger(alertParams.Count);
+            packet.Write(alertParams.Count);
 
             foreach (string key in alertParams.Keys)
             {
-                packet.WriteString(key);
-                packet.WriteString(alertParams[key]);
+                packet.Write(key);
+                packet.Write(alertParams[key]);
             }
 
             return packet;
