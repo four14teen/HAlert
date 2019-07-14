@@ -1,7 +1,7 @@
 ﻿using Sulakore.Network.Protocol;
 using System.Collections.Generic;
 
-namespace HAlerts
+namespace HAlert
 {
     public class HAlert
     {

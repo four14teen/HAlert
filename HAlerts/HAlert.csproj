@@ -7,8 +7,8 @@
     <ProjectGuid>{D1FB9BD7-B4F4-4805-9D14-E097325488BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HAlerts</RootNamespace>
-    <AssemblyName>HAlerts</AssemblyName>
+    <RootNamespace>HAlert</RootNamespace>
+    <AssemblyName>HAlert</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sulakore">
-      <HintPath>..\..\..\habcam-desktop-public\habcam-desktop-public\Dependencies\Sulakore.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +52,15 @@
     <Compile Include="HAlert.cs" />
     <Compile Include="HAlertBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Submodules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Submodules\Sulakore\Sulakore\Sulakore.csproj">
+      <Project>{24340332-5d82-42dc-afdc-320ed5a1730b}</Project>
+      <Name>Sulakore</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

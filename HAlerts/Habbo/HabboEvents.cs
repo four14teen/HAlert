@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HAlerts
+namespace HAlert
 {
     public static class HabboEvents
     {

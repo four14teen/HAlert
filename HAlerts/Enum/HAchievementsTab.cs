@@ -1,4 +1,4 @@
-﻿namespace HAlerts
+﻿namespace HAlert
 {
     public enum HAchievementsTab
     {
