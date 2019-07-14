@@ -1,6 +1,6 @@
-﻿namespace HAlert
+﻿namespace HabboAlerts
 {
-    public enum HForumsTab
+    public enum HabboForumsTab
     {
         Active,
         Popular,

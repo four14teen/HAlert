@@ -1,9 +1,9 @@
 ﻿using Sulakore.Network.Protocol;
 using System.Collections.Generic;
 
-namespace HAlert
+namespace HabboAlerts
 {
-    public class HAlert
+    public class HabboAlert
     {
         /// <summary>
         /// The alert title. This only appears on PopUp alerts.
@@ -30,7 +30,7 @@ namespace HAlert
         /// </summary>
         public string UrlTitle { get; set; }
 
-        public HAlert(string title, string message, string type, string url, string image, string urlTitle)
+        public HabboAlert(string title, string message, string type, string url, string image, string urlTitle)
         {
             Title = title;
             Message = message;

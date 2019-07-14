@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HAlert
+namespace HabboAlerts
 {
     public static class HabboEvents
     {
@@ -103,8 +103,8 @@ namespace HAlert
         /// </summary>
         /// <param name="type">Enum to specify wether the regular or builders club catalog has to be opened</param>
         /// <returns></returns>
-        public static string ShowCatalog(HCatalogType type)
-            => type == HCatalogType.BuildersClub ? "catalog/warehouse" : "catalog/open";
+        public static string ShowCatalog(HabboCatalogType type)
+            => type == HabboCatalogType.BuildersClub ? "catalog/warehouse" : "catalog/open";
 
         /// <summary>
         /// Opens a chat window with a chosen player ID.
@@ -120,8 +120,8 @@ namespace HAlert
         /// <param name="type">Enum to specify wether the regular or builders club catalog has to be opened</param>
         /// <param name="name">The catalog page name</param>
         /// <returns></returns>
-        public static string ShowCatalogPage(HCatalogType type, string name)
-            => type == HCatalogType.BuildersClub ? $"catalog/warehouse/{name}" : $"catalog/open/{name}";
+        public static string ShowCatalogPage(HabboCatalogType type, string name)
+            => type == HabboCatalogType.BuildersClub ? $"catalog/warehouse/{name}" : $"catalog/open/{name}";
 
         /// <summary>
         /// Opens the seasonal calendar. Possibly only works on the hotel view.
@@ -136,9 +136,9 @@ namespace HAlert
         /// </summary>
         /// <param name="tab">Enum to specify which forum tab has to be opened.</param>
         /// <returns></returns>
-        public static string ShowForumsTab(HForumsTab tab)
+        public static string ShowForumsTab(HabboForumsTab tab)
         {
-            string tabStr = Enum.GetName(typeof(HForumsTab), tab).ToLower();
+            string tabStr = Enum.GetName(typeof(HabboForumsTab), tab).ToLower();
             return $"groupforum/list/{tabStr}";
         }
 
@@ -147,9 +147,9 @@ namespace HAlert
         /// </summary>
         /// <param name="tab">Enum to specify which inventory tab has to be opened.</param>
         /// <returns></returns>
-        public static string ShowInventory(HInventoryTab tab = 0)
+        public static string ShowInventory(HabboInventoryTab tab = 0)
         {
-            string tabStr = Enum.GetName(typeof(HInventoryTab), tab).ToLower();
+            string tabStr = Enum.GetName(typeof(HabboInventoryTab), tab).ToLower();
 
             return $"inventory/open/{tabStr}";
         }
@@ -159,9 +159,9 @@ namespace HAlert
         /// </summary>
         /// <param name="tab">Enum to specify which achievements tab has to be opened.</param>
         /// <returns></returns>
-        public static string ShowAchievements(HAchievementsTab tab = 0)
+        public static string ShowAchievements(HabboAchievementsTab tab = 0)
         {
-            string tabStr = Enum.GetName(typeof(HAchievementsTab), tab).ToLower()
+            string tabStr = Enum.GetName(typeof(HabboAchievementsTab), tab).ToLower()
                 .Replace("roombuilder", "room_builder");
 
             return $"questengine/achievements/{tabStr}";
@@ -172,14 +172,14 @@ namespace HAlert
         /// </summary>
         /// <param name="menu">Enum to specify which menu icon will be highlighted</param>
         /// <returns></returns>
-        public static string HighlightMenu(HHightlightableMenu menu)
+        public static string HighlightMenu(HabboHightlightableMenu menu)
         {
             string menuString = "memenu";
 
             switch (menu)
             {
-                case HHightlightableMenu.Catalog: { menuString = "catalog"; break; }
-                case HHightlightableMenu.Navigator: { menuString = "navigator"; break; }
+                case HabboHightlightableMenu.Catalog: { menuString = "catalog"; break; }
+                case HabboHightlightableMenu.Navigator: { menuString = "navigator"; break; }
             }
 
             return $"toolbar/highlight/{menuString}";
@@ -192,15 +192,15 @@ namespace HAlert
         /// <param name="uiControl">Enum to specify which control in the UI needs to have a help bubble added</param>
         /// <param name="message">The message that will be displayed on the help bubble</param>
         /// <returns></returns>
-        public static string ShowHelpBubble(HUIControl uiControl, string message)
-            => $"helpBubble/add/{Enum.GetName(typeof(HUIControl), uiControl)}/{message}";
+        public static string ShowHelpBubble(HabboUIControl uiControl, string message)
+            => $"helpBubble/add/{Enum.GetName(typeof(HabboUIControl), uiControl)}/{message}";
 
         /// <summary>
         /// Removes a help "chatbubble" type of bubble from the selected part of the Habbo UI.
         /// </summary>
         /// <param name="uiControl">Enum to specify which control in the UI needs to have a help bubble added</param>
         /// <returns></returns>
-        public static string RemoveHelpBubble(HUIControl uiControl)
-            => $"helpBubble/remove/{Enum.GetName(typeof(HUIControl), uiControl)}";
+        public static string RemoveHelpBubble(HabboUIControl uiControl)
+            => $"helpBubble/remove/{Enum.GetName(typeof(HabboUIControl), uiControl)}";
     }
 }

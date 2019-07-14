@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAlert", "HAlerts\HAlert.csproj", "{D1FB9BD7-B4F4-4805-9D14-E097325488BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabboAlerts", "HabboAlerts\HabboAlerts.csproj", "{D1FB9BD7-B4F4-4805-9D14-E097325488BA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulakore", "Submodules\Sulakore\Sulakore\Sulakore.csproj", "{24340332-5D82-42DC-AFDC-320ED5A1730B}"
 EndProject

@@ -1,6 +1,6 @@
-﻿namespace HAlert
+﻿namespace HabboAlerts
 {
-    public enum HInventoryTab
+    public enum HabboInventoryTab
     {
         None,
         Furni,

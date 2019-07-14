@@ -1,6 +1,6 @@
-﻿namespace HAlert
+﻿namespace HabboAlerts
 {
-    public enum HAchievementsTab
+    public enum HabboAchievementsTab
     {
         None,
         Music,

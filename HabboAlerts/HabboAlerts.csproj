@@ -7,8 +7,8 @@
     <ProjectGuid>{D1FB9BD7-B4F4-4805-9D14-E097325488BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HAlert</RootNamespace>
-    <AssemblyName>HAlert</AssemblyName>
+    <RootNamespace>HabboAlerts</RootNamespace>
+    <AssemblyName>HabboAlerts</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -41,16 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enum\HAchievementsTab.cs" />
-    <Compile Include="Enum\HAlertType.cs" />
-    <Compile Include="Enum\HCatalogType.cs" />
-    <Compile Include="Enum\HForumsTab.cs" />
-    <Compile Include="Enum\HHighlightableMenu.cs" />
-    <Compile Include="Enum\HInventoryTab.cs" />
-    <Compile Include="Enum\HUIControl.cs" />
+    <Compile Include="Enum\HabboAchievementsTab.cs" />
+    <Compile Include="Enum\HabboAlertType.cs" />
+    <Compile Include="Enum\HabboCatalogType.cs" />
+    <Compile Include="Enum\HabboForumsTab.cs" />
+    <Compile Include="Enum\HabboHighlightableMenu.cs" />
+    <Compile Include="Enum\HabboInventoryTab.cs" />
+    <Compile Include="Enum\HabboUIControl.cs" />
     <Compile Include="Habbo\HabboEvents.cs" />
-    <Compile Include="HAlert.cs" />
-    <Compile Include="HAlertBuilder.cs" />
+    <Compile Include="HabboAlert.cs" />
+    <Compile Include="AlertBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

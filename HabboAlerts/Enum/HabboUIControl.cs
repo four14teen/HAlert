@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HAlert
+namespace HabboAlerts
 {
-    public enum HUIControl
+    public enum HabboUIControl
     {
         FRIENDS_BAR_ALL_FRIENDS,
         FRIENDS_BAR_FIND_FRIENDS,

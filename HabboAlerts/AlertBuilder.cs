@@ -1,6 +1,6 @@
-﻿namespace HAlert
+﻿namespace HabboAlerts
 {
-    public sealed class HAlertBuilder
+    public sealed class AlertBuilder
     {
         private string _title;
         private string _message;
@@ -9,12 +9,12 @@
         private string _image;
         private string _urlTitle;
 
-        public static HAlertBuilder CreateAlert(HAlertType type, string message)
+        public static AlertBuilder CreateAlert(HabboAlertType type, string message)
         {
-            return new HAlertBuilder()
+            return new AlertBuilder()
             {
                 _message = message,
-                _alertType = (type == HAlertType.Bubble ? "BUBBLE" : "POP_UP")
+                _alertType = (type == HabboAlertType.Bubble ? "BUBBLE" : "POP_UP")
             };
         }
 
@@ -23,7 +23,7 @@
         /// </summary>
         /// <param name="title">The title</param>
         /// <returns></returns>
-        public HAlertBuilder Title(string title)
+        public AlertBuilder Title(string title)
         {
             _title = title;
             return this;
@@ -36,7 +36,7 @@
         /// <param name="url">The HabboEvent or external URL</param>
         /// <param name="isExternalUrl">Is the url parameter an external URL, or a Habbo Event?</param>
         /// <returns></returns>
-        public HAlertBuilder EventUrl(string url, bool isExternalUrl = false)
+        public AlertBuilder EventUrl(string url, bool isExternalUrl = false)
         {
             _url = (isExternalUrl ? string.Empty : "event:") + url;
             return this;
@@ -47,7 +47,7 @@
         /// </summary>
         /// <param name="title">The title</param>
         /// <returns></returns>
-        public HAlertBuilder EventTitle(string title)
+        public AlertBuilder EventTitle(string title)
         {
             _urlTitle = title;
             return this;
@@ -58,15 +58,15 @@
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        public HAlertBuilder ImageUrl(string url)
+        public AlertBuilder ImageUrl(string url)
         {
             _image = url;
             return this;
         }
 
-        public static implicit operator HAlert(HAlertBuilder builder)
+        public static implicit operator HabboAlert(AlertBuilder builder)
         {
-            return new HAlert(builder._title, builder._message, builder._alertType, builder._url, builder._image, builder._urlTitle);
+            return new HabboAlert(builder._title, builder._message, builder._alertType, builder._url, builder._image, builder._urlTitle);
         }
     }
 }
