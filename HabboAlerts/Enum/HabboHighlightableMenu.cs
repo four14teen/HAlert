@@ -2,7 +2,7 @@
 {
     public enum HabboHightlightableMenu
     {
-        Me,
+        MeMenu,
         Catalog,
         Navigator
     }

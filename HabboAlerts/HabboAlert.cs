@@ -16,7 +16,7 @@ namespace HabboAlerts
         /// <summary>
         /// The type of alert. Habbo accepts 2 options: "BUBBLE" and "POP_UP"
         /// </summary>
-        public string AlertType { get; set; }
+        public HabboAlertType Type { get; set; }
         /// <summary>
         /// The URL you will go to when interacting with the alert. This can be a Habbo Event, or an external URL. The latter only works in PopUp alerts.
         /// </summary>
@@ -30,11 +30,13 @@ namespace HabboAlerts
         /// </summary>
         public string UrlTitle { get; set; }
 
-        public HabboAlert(string title, string message, string type, string url, string image, string urlTitle)
+        public HabboAlert()
+        { }
+        public HabboAlert(string title, string message, HabboAlertType type, string url, string image, string urlTitle)
         {
             Title = title;
             Message = message;
-            AlertType = type;
+            Type = type;
             Url = url;
             Image = image;
             UrlTitle = urlTitle;
@@ -53,19 +55,19 @@ namespace HabboAlerts
 
             if (Title != null) alertParams.Add("title", Title);
             if (Message != null) alertParams.Add("message", Message);
-            if (AlertType != null) alertParams.Add("display", AlertType);
+
+            alertParams.Add("display", (Type == HabboAlertType.Bubble ? "BUBBLE" : "POP_UP"));
+            
             if (Url != null) alertParams.Add("linkUrl", Url);
             if (Image != null) alertParams.Add("image", Image);
             if (UrlTitle != null) alertParams.Add("linkTitle", UrlTitle);
 
             packet.Write(alertParams.Count);
-
-            foreach (string key in alertParams.Keys)
+            foreach (var parameter in alertParams)
             {
-                packet.Write(key);
-                packet.Write(alertParams[key]);
+                packet.Write(parameter.Key);
+                packet.Write(parameter.Value);
             }
-
             return packet;
         }
     }
