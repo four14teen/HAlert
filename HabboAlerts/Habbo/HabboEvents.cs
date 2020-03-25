@@ -63,56 +63,55 @@ namespace HabboAlerts
         /// </summary>
         /// <param name="id">The group ID</param>
         /// <returns></returns>
-        public static string ShowGroup(int id) => $"group/{id}";
+        public static string ShowGroup(int id) => "group/" + id;
         /// <summary>
         /// Opens a window in-game with the chosen habbo page (those are hosted on /gamedata/habbopages/)
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static string ShowHabboPage(string name) => $"habbopages/{name}";
+        public static string ShowHabboPage(string name) => "habbopages/" + name;
         
         /// <summary>
         /// Navigates to the chosen room ID.
         /// </summary>
         /// <param name="id">The room ID</param>
         /// <returns></returns>
-        public static string GoToRoom(int id) => $"navigator/goto/{id}";
+        public static string GoToRoom(int id) => "navigator/goto/" + id;
 
         /// <summary>
         /// Opens the navigator and searches for rooms based on the chosen search query.
         /// </summary>
         /// <param name="query">The search query</param>
         /// <returns></returns>
-        public static string SearchForRooms(string query) => $"navigator/search/{query}";
+        public static string SearchForRooms(string query) => "navigator/search/" + query;
 
         /// <summary>
         /// Opens the chosen page on the Habbo website. Keeps the client open in the background.
         /// </summary>
         /// <param name="name">The page name</param>
         /// <returns></returns>
-        public static string ShowHabboWebPage(string name) => $"habblet/open/{name}";
+        public static string ShowHabboWebPage(string name) => "habblet/open/" + name;
         
         /// <summary>
         /// Opens a user's profile based on the chosen player name.
         /// </summary>
         /// <param name="name">The player name</param>
         /// <returns></returns>
-        public static string ShowPlayerProfile(string name) => $"friendbar/user/{name}";
+        public static string ShowPlayerProfile(string name) => "friendbar/user/" + name;
         /// <summary>
         /// Opens the catalog home page.
         /// </summary>
         /// <param name="type">Enum to specify wether the regular or builders club catalog has to be opened</param>
         /// <returns></returns>
         public static string ShowCatalog(HabboCatalogType type)
-            => type == HabboCatalogType.BuildersClub ? "catalog/warehouse" : "catalog/open";
+            =>  "catalog/" + (type == HabboCatalogType.BuildersClub ? "warehouse" : "open");
 
         /// <summary>
         /// Opens a chat window with a chosen player ID.
         /// </summary>
         /// <param name="id">The player ID</param>
         /// <returns></returns>
-        public static string ShowPlayerChat(int id)
-            => $"friendlist/openchat/{id}:0";
+        public static string ShowPlayerChat(int id) => $"friendlist/openchat/{id}:0";
 
         /// <summary>
         /// Opens the catalog on the chosen page.
@@ -139,7 +138,7 @@ namespace HabboAlerts
         public static string ShowForumsTab(HabboForumsTab tab)
         {
             string tabStr = Enum.GetName(typeof(HabboForumsTab), tab).ToLower();
-            return $"groupforum/list/{tabStr}";
+            return "groupforum/list/" + tabStr;
         }
 
         /// <summary>
@@ -150,8 +149,7 @@ namespace HabboAlerts
         public static string ShowInventory(HabboInventoryTab tab = 0)
         {
             string tabStr = Enum.GetName(typeof(HabboInventoryTab), tab).ToLower();
-
-            return $"inventory/open/{tabStr}";
+            return "inventory/open/" + tabStr;
         }
         
         /// <summary>
@@ -163,8 +161,7 @@ namespace HabboAlerts
         {
             string tabStr = Enum.GetName(typeof(HabboAchievementsTab), tab).ToLower()
                 .Replace("roombuilder", "room_builder");
-
-            return $"questengine/achievements/{tabStr}";
+            return "questengine/achievements/" + tabStr;
         }
 
         /// <summary>
@@ -172,19 +169,12 @@ namespace HabboAlerts
         /// </summary>
         /// <param name="menu">Enum to specify which menu icon will be highlighted</param>
         /// <returns></returns>
-        public static string HighlightMenu(HabboHightlightableMenu menu)
+        public static string HighlightMenu(HabboHightlightableMenu menu) 
         {
-            string menuString = "memenu";
+            string menuStr = Enum.GetName(typeof(HabboHightlightableMenu), menu).ToLower();
 
-            switch (menu)
-            {
-                case HabboHightlightableMenu.Catalog: { menuString = "catalog"; break; }
-                case HabboHightlightableMenu.Navigator: { menuString = "navigator"; break; }
-            }
-
-            return $"toolbar/highlight/{menuString}";
+            return "toolbar/highlight/" + menuStr;
         }
-
         /// <summary>
         /// Adds a help "chatbubble" type of bubble to the selected part of the Habbo UI.
         ///<para>NOTE: If more than one bubble is present at once, only the last bubble will be closable. Others will never leave the UI.</para>
@@ -201,6 +191,6 @@ namespace HabboAlerts
         /// <param name="uiControl">Enum to specify which control in the UI needs to have a help bubble added</param>
         /// <returns></returns>
         public static string RemoveHelpBubble(HabboUIControl uiControl)
-            => $"helpBubble/remove/{Enum.GetName(typeof(HabboUIControl), uiControl)}";
+            => "helpBubble/remove/" + Enum.GetName(typeof(HabboUIControl), uiControl);
     }
 }
