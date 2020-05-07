@@ -36,7 +36,7 @@ namespace HabboAlerts
         /// <summary>
         /// Opens the Citizenship part of the talent track.
         /// </summary>
-        public const string ShowCitizenShip = "talent/open/citizenship";
+        public const string ShowCitizenship = "talent/open/citizenship";
         /// <summary>
         /// Opens the Habbo Club Center.
         /// </summary>
