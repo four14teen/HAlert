@@ -1,4 +1,5 @@
 ﻿using Sulakore.Network.Protocol;
+
 using System.Collections.Generic;
 
 namespace HabboAlerts
@@ -46,7 +47,6 @@ namespace HabboAlerts
         /// Converts the alert to a packet.
         /// </summary>
         /// <param name="header">The clientside alert header.</param>
-        /// <returns></returns>
         public HPacket ToPacket(ushort header)
         {
             EvaWirePacket packet = new EvaWirePacket(header, "HAlerts_custom");
@@ -63,10 +63,10 @@ namespace HabboAlerts
             if (UrlTitle != null) alertParams.Add("linkTitle", UrlTitle);
 
             packet.Write(alertParams.Count);
-            foreach (var parameter in alertParams)
+            foreach (var (key, value) in alertParams)
             {
-                packet.Write(parameter.Key);
-                packet.Write(parameter.Value);
+                packet.Write(key);
+                packet.Write(value);
             }
             return packet;
         }
